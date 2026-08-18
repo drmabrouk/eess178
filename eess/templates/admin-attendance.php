@@ -342,31 +342,3 @@ function printAbsenceReport(type) {
 
 </script>
 
-<style>
-#attendance-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.sm-attendance-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-}
-.attendance-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
-    background: #fff;
-    cursor: pointer;
-    font-weight: 800;
-    font-size: 12px;
-    transition: 0.2s;
-    color: var(--sm-text-gray);
-}
-.attendance-btn[data-status="present"]:hover, .attendance-btn[data-status="present"].active { background: #38a169; color: #fff; border-color: #38a169; }
-.attendance-btn[data-status="absent"]:hover, .attendance-btn[data-status="absent"].active { background: #e53e3e; color: #fff; border-color: #e53e3e; }
-.attendance-btn[data-status="late"]:hover, .attendance-btn[data-status="late"].active { background: #ecc94b; color: #fff; border-color: #ecc94b; }
-.attendance-btn[data-status="excused"]:hover, .attendance-btn[data-status="excused"].active { background: #4299e1; color: #fff; border-color: #4299e1; }
-</style>

@@ -8,7 +8,7 @@
 
     window.eessCurrentStep = 1;
     window.eessIsEditMode = false;
-    var eessAjaxUrl = (typeof ajaxurl !== 'undefined') ? ajaxurl : '/wp-admin/admin-ajax.php';
+    var eessAjaxUrl = (typeof sm_ajax_object !== 'undefined' && sm_ajax_object.ajax_url) ? sm_ajax_object.ajax_url : ((typeof ajaxurl !== 'undefined') ? ajaxurl : '/wp-admin/admin-ajax.php');
 
     window.eessOpenUnifiedUserModal = function(mode, userId) {
         mode = mode || 'add_user';

@@ -291,9 +291,6 @@
     <?php endif; ?>
     </script>
 
-    <style>
-    .sm-doc-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1) !important; }
-    </style>
     </div><!-- End doc-library-tab -->
 
     <?php if (current_user_can('تسجيل_مخالفة')):

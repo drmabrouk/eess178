@@ -355,10 +355,45 @@
     border-bottom-color: var(--eess-accent);
 }
 
+/* Module-Specific Card Helpers */
+.sm-doc-card:hover, .sm-attendance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--eess-shadow-md) !important;
+}
+
+#attendance-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.attendance-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--eess-radius-corner);
+    border: 1px solid var(--eess-light-border);
+    background: #fff;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 12px;
+    transition: 0.2s;
+    color: var(--eess-muted);
+}
+.attendance-btn[data-status="present"]:hover, .attendance-btn[data-status="present"].active { background: #38a169; color: #fff; border-color: #38a169; }
+.attendance-btn[data-status="absent"]:hover, .attendance-btn[data-status="absent"].active { background: #e53e3e; color: #fff; border-color: #e53e3e; }
+.attendance-btn[data-status="late"]:hover, .attendance-btn[data-status="late"].active { background: #ecc94b; color: #fff; border-color: #ecc94b; }
+.attendance-btn[data-status="excused"]:hover, .attendance-btn[data-status="excused"].active { background: #4299e1; color: #fff; border-color: #4299e1; }
+
 /* Animations */
 @keyframes eessFadeIn {
     from { opacity: 0; transform: translateY(-8px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .sm-modal-overlay[style*="display: flex"] .sm-modal-content {
