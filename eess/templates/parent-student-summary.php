@@ -34,13 +34,6 @@
     </div>
 </div>
 
-<style>
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
-}
-</style>
 
 
 <div class="sm-card-grid" style="margin-bottom: 40px;">

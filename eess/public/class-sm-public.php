@@ -246,6 +246,12 @@ class SM_Public {
         wp_enqueue_style('google-font-cairo', 'https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@300;400;600;700;800&display=swap', array(), null);
         wp_enqueue_script('chart-js', 'https://cdn.jsdelivr.net/npm/chart.js', array(), '4.4.1', true);
         wp_enqueue_script('html5-qrcode', 'https://unpkg.com/html5-qrcode', array(), '2.3.8', true);
+        wp_enqueue_script('eess-core', SM_PLUGIN_URL . 'public/js/sm-core.js', array('jquery'), $this->version, true);
+        wp_enqueue_script('eess-unified-user-modal', SM_PLUGIN_URL . 'public/js/unified-user-modal.js', array('jquery', 'eess-core'), $this->version, true);
+        wp_localize_script('eess-core', 'sm_ajax_object', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('sm_admin_action')
+        ));
         wp_enqueue_style($this->plugin_name, SM_PLUGIN_URL . 'assets/css/sm-public.css', array('dashicons'), $this->version, 'all');
 
         $appearance = SM_Settings::get_appearance();
